@@ -27,3 +27,7 @@ You will have your own `TODO App` written using Clarity at the end of this cours
   - Clarity Mappings
   - Building and explaining the Final Project
   - Closing note
+
+
+So what are you waiting for ?
+Start with [Stacks Introduction](./Stacks-Intro.md)
