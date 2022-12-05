@@ -1,5 +1,5 @@
 # Simplified-Clarity-Mini-Course
-
+![StacksLogo](https://blockgeeks.com/wp-content/uploads/2021/01/Screen-Shot-2021-01-12-at-10.43.14-AM.png)
 ### Purpose 
 
 This is a guide on how to get started with Bitcoin blockchain development powered by [Stacks Ecosystem](https://www.stacks.co/) using `Clarity` , the programming language.
