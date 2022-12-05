@@ -59,6 +59,10 @@ Congratulations 🎉 <br/>
 you are becoming a sponge on Clarity .<br/>
 Let's keep up the rhythm and keep going.
 
+Time to move to next lesson about [Functions](./Functions.md)
+
+
+
 
 
 
