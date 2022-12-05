@@ -1,4 +1,5 @@
-(define-data-var index uint 0)(define-map items (uint) (string-utf8 200))
+(define-data-var index uint 0)
+(define-map items (uint) (string-utf8 200))
 (define-public (addItem (item (string-utf8)))
   (map-set items (var-get index) item)
   (var-set index (+ (var-get index) u1))
