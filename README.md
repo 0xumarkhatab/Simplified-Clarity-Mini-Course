@@ -22,7 +22,9 @@ You will have your own `TODO App` written using Clarity at the end of this cours
   - What is stacks ?
   - What is clarity and why it is the best language ?
   - Getting started with Clarity 
-  - Clarity data types
+  - Clarity Variables
+  - Clarity Functions
+  - Clarity Mappings
   - Gearing up for small project
   - Introduction to Clarity tools
   - Building and explaining the code-along
