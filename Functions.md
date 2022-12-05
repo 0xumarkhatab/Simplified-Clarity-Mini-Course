@@ -141,4 +141,4 @@ And Let's keep going ! <br/>
 
 Meanwhile , give a tap on your back because you are really doing great work ✨ <br/>
 
-Let's Go !
+Time to get hands on most powerful thing in clarity called Mappings. Let's conquer the [Mappings](./Mappings.md)
