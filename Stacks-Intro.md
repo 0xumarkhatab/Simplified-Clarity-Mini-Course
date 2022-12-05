@@ -20,4 +20,4 @@ But if you still want to have a good look and these statements seem confusing,<b
 
 you can refer to [Stacks official documentation](https://www.stacks.co/learn/introduction) to get a good look at basics.
 
-
+Let's naviate to next lesson which is [Introduction to Clarity](./Clarity-Introduction.md)
