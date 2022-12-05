@@ -25,7 +25,5 @@ You will have your own `TODO App` written using Clarity at the end of this cours
   - Clarity Variables
   - Clarity Functions
   - Clarity Mappings
-  - Gearing up for Final project
-  - Introduction to Clarity tools
-  - Building and explaining the code-along
+  - Building and explaining the Final Project
   - Closing note
