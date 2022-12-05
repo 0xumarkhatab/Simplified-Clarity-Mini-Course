@@ -48,4 +48,5 @@ Yes or Yes ?
 
 Yes ? Wow !
 
-So Let's move to next lesson.
+So Let's move to next lesson about [Getting Started with Clarity](./Getting-Started-With-Clarity.md)
+
