@@ -18,7 +18,7 @@ Let me tell you how
 
 # Example of mapping
 
-Let's say we have a mapping named `items` that maps every integer `uint` to a string `string-ascii-8`.
+Let's say we have a mapping named `Items` that maps every integer `uint` to a string `string-ascii-8`.
 
 What we will do is whenever user wants to add an item let's say 'Gym at 5 AM',
 we will store this string at location 1
@@ -27,9 +27,9 @@ then third on location 3 and so on.
 
 So eventually what we will have is something like this .
 
-value at key `1` in `items` is  `Gym at 5 AM` <br/>
-value at key `2` in `items` is  `Breakfast at 6 am` <br/>
-value at key `3` in `items` is  `office at 9 am` <br/>
+value at key `1` in `Items` is  `Gym at 5 AM` <br/>
+value at key `2` in `Items` is  `Breakfast at 6 am` <br/>
+value at key `3` in `Items` is  `office at 9 am` <br/>
 and so on..
 
 
@@ -48,10 +48,10 @@ You can decalre mapping as
 Following is a valid map declaration
 
 ```clarity
-(define-map items (uint) (string-utf8 200))
+(define-map Items (uint) (string-utf8 200))
 ```
 
-We are telling clarity to create a map by `define-map` keyword ,  giving it a name of `items` , key data type to be `uint` (unsigned integer) and value data type is string (`string-utf-8`)
+We are telling clarity to create a map by `define-map` keyword ,  giving it a name of `Items` , key data type to be `uint` (unsigned integer) and value data type is string (`string-utf-8`)
 
 We additionally are telling clarity that each value is of type string but each string's maximum length is 200 ( we mention max-length everytime we decalare a string variable)
 
