@@ -13,18 +13,18 @@ Check clarity tools [Here](https://clarity.tools/)
 
 
 ### Primary vaiables we will use
-index - will be used as key in map to store and access different todo items - it's value will be increased by 1 each time a new item is added <br/>
-items - the place where all todo items will be stored
+Index - will be used as key in map to store and access different todo items - it's value will be increased by 1 each time a new item is added <br/>
+Items - the place where all todo items will be stored
 
 #### Vaiables declaration
 ```clarity
-(define-data-var index uint 0)
-(define-map items (uint) (string-utf8 200))
+(define-data-var Index uint 0)
+(define-map Items (uint) (string-utf8 200))
 
 ```
 we have defined two variables <br/>
-`index`has initial value 0 having type `signed integer`<br/>
-`items` is a mapping with key type as `uint` and value type is `string` <br/>
+`Index`has initial value 0 having type `signed integer`<br/>
+`Items` is a mapping with key type as `uint` and value type is `string` <br/>
 
 
 ### AddTodo Function
@@ -42,15 +42,15 @@ it is a function that receives a todo item and adds to the items list.
 #### code
 
 ```clarity
-(define-public (addItem (item (string-utf8)))
-  (map-set items (var-get index) item)
-  (var-set index (+ (var-get index) u1))
+(define-public (AddItem (item (string-utf8)))
+  (map-set Items (var-get Index) item)
+  (var-set Index (+ (var-get Index) u1))
   ok "item added in todo")
 ```
 
 ### Functoin invocation
 ```clarity
-(addItem "Gym at 5 AM")
+(AddItem "Gym at 5 AM")
 ```
 
 we call the function `addItem` with a todo item to add which is `Gym at 5 AM`
@@ -58,10 +58,10 @@ we call the function `addItem` with a todo item to add which is `Gym at 5 AM`
 and then we call the same function with different todo items to store !
 ```clarity
 
-(addItem "Gym at 5 AM")
+(AddItem "Gym at 5 AM")
 
-(addItem "Breakfast at 7 AM") 
-(addItem "Office at 8 AM")
+(AddItem "Breakfast at 7 AM") 
+(AddItem "Office at 8 AM")
 ```
 ### Printing the Todo list
 We print the todo list by printing number of todo items first and then using built-in `print` function.
@@ -70,25 +70,25 @@ In order to access element of a map at specific key , we use `map-get?` function
 
 ```clarity
 
-(print "total items in the todo-list are ")(print ( var-get index))
+(print "total items in the todo-list are ")(print ( var-get Index))
 
 (print "Printing Todo List ")
 
 
-(print (try! (map-get? items 0)))
+(print (try! (map-get? Items 0)))
 
 
-(print (try! (map-get? items 1)))
+(print (try! (map-get? Items 1)))
 
 
-(print (try! (map-get? items 2)))
+(print (try! (map-get? Items 2)))
 
 ```
 
 #### But what is try ?
 if we just write 
 ```clarity
-(print (map-get? items 0))
+(print (map-get? Items 0))
 
 ```
 clarity will still give the answer but it will be wrapped in a `some` keyword like ... `some "Gym at 5 AM" ` <br/>
