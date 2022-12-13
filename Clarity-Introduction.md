@@ -41,6 +41,20 @@ Bitcoin always been a ledger but now stacks is leveraging the bitcoin state to i
 with clarity , it is possible to have the super powers of reading the bitcoin blockchain and build on top of it.
 We are working hard for granting you Further super powers .
 
+## Why you Must choose Clarity
+Below here we got the [Comparison of Solidity,Move and Clarity ](https://101blockchains.com/solidity-vs-move-vs-clarity/)and deciding which is the best.
+
+![Solidity-Vs-Move-Vs-Clarity-Key-Differences_](https://user-images.githubusercontent.com/71306738/207467487-c0a21515-5344-460d-835e-5f9da718ba7a.jpg)
+
+
+Although , solidity is flexible enough to start blockchain development , but it really suffers in re-entrancy bugs and code transparency .
+
+In clarity , yes it is a little difficult at first but once you get the hang of it , you will love it . 
+
+There is no re-entrancy attacks here also the compiler elimination and multiples data types are the plus points to tell you 
+
+why you should migrate to clarity now !
+
 
 With these benefits, i think i have convinced you to start learning clarity with me .
 
