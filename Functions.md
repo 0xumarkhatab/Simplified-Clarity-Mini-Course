@@ -30,7 +30,7 @@ User-defined functions leverage the built in functions means they are built on t
 i.e Following function
 
 ```clarity
-(define-public (printHello)
+(define-public (PrintHello)
     (print "Hello")
 )
 ```
@@ -40,9 +40,9 @@ Uses built-in function `print` to print a custom message to the user.
 ## Another Example
 
 ```clarity
-(define-public (GreetMe (username string-ascii-8 ))
+(define-public (GreetMe (UserName string-ascii-8 ))
     (print "Hello ,")
-    (print username )
+    (print UserName )
     
 )
 ```
@@ -89,9 +89,9 @@ will return 13 because this function adds 6 and 7
 
 
 ```clarity
-(define-public (GreetMe (username string-ascii-8 ))
+(define-public (GreetMe (UserName string-ascii-8 ))
     (print "Hello ,")
-    (print username )
+    (print UserName )
     
 )
 
