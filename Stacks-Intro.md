@@ -12,8 +12,10 @@ and transactions made on stacks chain are also verifiable on bitcoin chain.
 
 # Course Focus
 This mini course is more about how to build on clarity and not much about the technicalities of stacks working .
+If you need a grip on stacks concepts and make the most of out of  it the future , i will urge you to visit [Stacks Documentation](https://docs.stacks.co/docs/understand-stacks/proof-of-transfer) <br/>
+for in-depth explanation of things like Proof of Transfer and other important stuff. <br/>
 
-If you are a developer and care just about learning clarity for now  , we can move to the next lesson [here]().
+However ,If you are a developer and care just about learning clarity for now  , we can move to the next lesson [here]().
 
 # Further steps to dive deeper
 But if you still want to have a good look and these statements seem confusing,<br/>
