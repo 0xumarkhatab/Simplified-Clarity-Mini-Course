@@ -3,33 +3,34 @@
 
 ## Purpose 
 
-This is a guide on how to get started with Bitcoin blockchain development powered by [Stacks Ecosystem](https://www.stacks.co/) using `Clarity`.
+This is a guide on how to get started with Bitcoin Blockchain Development powered by [Stacks Ecosystem](https://www.stacks.co/) using `Clarity`.
 
 Clarity is a powerful programming language.
 It provides features like predictability ,security and post conditions that made me fall in love with it.
 You will fall in love with it too when we go in depth later in this course.
 
-## Why This course?
+## Why This Course?
 Clarity has content available but it is very sparse and difficult to understand for beginners.
 So, we thought that it will be a good idea to have a place where people can get started with clarity
 in simple language and build at least one project while going along and move further.
+
 And that is the agenda of this course.
 
 ## Final Project 
-You will have your own `TODO App` written using Clarity at the end of this course. So, Let's go !
+You will have your own `TODO App` written using Clarity at the end of this course where you can Add , remove and mark items as complete. So, Let's go !
 
 ## What you will learn ?
   
     
-    ✔ What is stacks ?
-    ✔ What is clarity and why it is the best language ?
-    ✔ Getting started with Clarity 
-    ✔ Clarity Variables
-    ✔ Clarity Functions
-    ✔ Clarity Mappings
-    ✔ Building and explaining the Final Project
-    ✔ Closing note
+    ✔ What is Stacks ? 🤔
+    ✔ What is Clarity and why it is the Best Language ? 💪
+    ✔ Getting Started with Clarity 🙌
+    ✔ Clarity Variables ✨
+    ✔ Clarity Functions ✨
+    ✔ Clarity Mappings  ✨
+    ✔ Building and Explaining the Final Project 🔰
+    ✔ Closing Note 💖
 
 
-So what are you waiting for ?
-Start with [Stacks Introduction](./Stacks-Intro.md)
+  So what are you waiting for ?<br/>
+👉Start with [Stacks Introduction](./Stacks-Intro.md) 
