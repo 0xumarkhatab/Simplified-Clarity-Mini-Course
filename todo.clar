@@ -17,7 +17,7 @@
               
   
 
-p(AddItem "Gym at 5 AM")
+(AddItem "Gym at 5 AM")
 (AddItem "Breakfast at 7 AM")
 (AddItem "Office at 8 AM")
 
