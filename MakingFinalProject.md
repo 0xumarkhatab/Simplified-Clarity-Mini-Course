@@ -13,21 +13,24 @@ Check clarity tools [Here](https://clarity.tools/)
 
 
 ### Primary vaiables we will use
-Index  - will be used as key in map to store and access different todo items - it's value will be increased by 1 each time a new item is added <br/>
-NoItem - will be used to indicate the end of todo list when an item is removed
-Items  - the place where all todo items will be stored
+Index       - will be used as key in map to store and access different todo items - it's value will be increased by 1 each time a new item is added <br/>
+NoItem      - will be used to indicate the end of todo list when an item is removed
+Items       - the place where all todo items will be stored
+tempString  - to hold  intermediate data when we change an item ( more on this later )
 
 #### Vaiables declaration
 ```clarity
 (define-data-var Index uint 0)
 (define-data-var NoItem (string-utf8 200) "no item")
 (define-map Items (uint) (string-utf8 200))
+(define-data-var tempString (string-utf8 200) "")
 
 ```
 we have defined two variables <br/>
 `Index`has initial value 0 having type `signed integer`<br/>
 `NoItem` is a `Utf8 String variable` having maimum length of 200 and initial value as "NoItem". Read More about  Utf8 strings [here](https://blog.hubspot.com/website/what-is-utf-8#:~:text=UTF%2D8%20encodes%20a%20character,one%20byte%2C%20or%20eight%20bits.)
 
+`tempString` is an empty `utf8 string` of maximum length 200
 
 `Items` is a mapping with key type as `uint` and value type is `string` <br/>
 
@@ -61,6 +64,24 @@ but  it might seem difficult at first so i stick to the easy part to keep your b
     - Sends back an ok message that item is Removed
     - Exits
 
+### CompleteItem Function
+#### Purpose
+it is a function that marks the todo item as complete by appending a string "-Completed " on it's last.
+This is just an introductory course so we are not moving to the depth  of removing items or  storing in seprate data structures.
+
+Let's go for simplicity here too : )
+
+#### Technicality
+
+    - It has a paramter of the position of  item ( index of item the item is stored at)
+    - Fetches the item the given index
+    - Concatenate the string "- Completed" with it.
+    - Stores in temporary variable we made at the top "te,pString"
+    - Stores in Items list at the same index as paramter specified but this is an updated value
+    - Sends back an ok message that item is Completed
+    - Exits
+
+
 #### code
 
 ```clarity
@@ -74,7 +95,12 @@ but  it might seem difficult at first so i stick to the easy part to keep your b
   (var-set Index (- (var-get Index) u1))
   (map-set Items (var-get Index) NoItem) 
   (ok "You Item has been removed from todo list"))
-  
+
+(define-public (CompleteItem(ItemPosition (uint)))
+ (var-set tempString (concat (try! (map-get? Items ItemPosition)) "- Completed"))
+ (map-set Items ItemPosition (var-get tempString)
+  ok "You Item is marked completed"))
+
 ```
 
 ### Functoin invocation
@@ -99,8 +125,18 @@ We call the function `RemoveItem` to remove the last element  in the list which 
 ```clarity
 (RemoveItem)
 
+```
+
+Similarly the `CompleteItem` function is called here as 
+
+```clarity
+
+(CompleteItem u1)
 
 ```
+
+where `u1` denotes the unsigned integer `1` or  `one` in English.
+
 ### Printing the Todo list
 We print the todo list by printing number of todo items first and then using built-in `print` function.
 In order to access element of a map at specific key , we use `map-get?` function.
