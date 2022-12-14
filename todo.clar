@@ -5,19 +5,19 @@
 (define-public (AddItem (item (string-utf8)))
   (map-set Items (var-get Index) item) 
   (var-set Index (+ (var-get Index) u1))
-  (ok "item added in todo"))
+  "item has been added in todo list ")
   
               
   
 (define-public (RemoveItem)
   (var-set Index (- (var-get Index) u1))
   (map-set Items (var-get Index) NoItem) 
-  (ok "item is removed successfully"))
+  (ok "You Item has been removed from todo list"))
 
               
   
 
-(AddItem "Gym at 5 AM")
+p(AddItem "Gym at 5 AM")
 (AddItem "Breakfast at 7 AM")
 (AddItem "Office at 8 AM")
 
@@ -31,7 +31,7 @@
 
 (print (try! (map-get? Items 2)))
 
-(print (RemoveItem))
+(RemoveItem)
 
 
 
