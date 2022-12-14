@@ -13,21 +13,26 @@ Check clarity tools [Here](https://clarity.tools/)
 
 
 ### Primary vaiables we will use
-Index - will be used as key in map to store and access different todo items - it's value will be increased by 1 each time a new item is added <br/>
-Items - the place where all todo items will be stored
+Index  - will be used as key in map to store and access different todo items - it's value will be increased by 1 each time a new item is added <br/>
+NoItem - will be used to indicate the end of todo list when an item is removed
+Items  - the place where all todo items will be stored
 
 #### Vaiables declaration
 ```clarity
 (define-data-var Index uint 0)
+(define-data-var NoItem (string-utf8 200) "no item")
 (define-map Items (uint) (string-utf8 200))
 
 ```
 we have defined two variables <br/>
 `Index`has initial value 0 having type `signed integer`<br/>
+`NoItem` is a `Utf8 String variable` having maimum length of 200 and initial value as "NoItem". Read More about  Utf8 strings [here](https://blog.hubspot.com/website/what-is-utf-8#:~:text=UTF%2D8%20encodes%20a%20character,one%20byte%2C%20or%20eight%20bits.)
+
+
 `Items` is a mapping with key type as `uint` and value type is `string` <br/>
 
 
-### AddTodo Function
+### AddItem Function
 #### Purpose
 it is a function that receives a todo item and adds to the items list.
 
@@ -39,13 +44,37 @@ it is a function that receives a todo item and adds to the items list.
     - Sends back an ok message that item is added
     - Exits
 
+
+### RemoveItem Function
+#### Purpose
+it is a function that deletes the last element inserted in the  list of items in the todo .
+
+(with small tweaks the items can be deleted from the  front like index 0 ,1,2 .. 
+
+but  it might seem difficult at first so i stick to the easy part to keep your brain at ease )
+
+#### Technicality
+
+    - It has no paramter
+    - Decrements the value of the  index variable
+    - Stores Null Alternative "NoItem" string on the last place , replacig=ng the last item
+    - Sends back an ok message that item is Removed
+    - Exits
+
 #### code
 
 ```clarity
 (define-public (AddItem (item (string-utf8)))
-  (map-set Items (var-get Index) item)
+  (map-set Items (var-get Index) item) 
   (var-set Index (+ (var-get Index) u1))
-  ok "item added in todo")
+  "item has been added in todo list ")
+  
+   
+(define-public (RemoveItem)
+  (var-set Index (- (var-get Index) u1))
+  (map-set Items (var-get Index) NoItem) 
+  (ok "You Item has been removed from todo list"))
+  
 ```
 
 ### Functoin invocation
@@ -53,7 +82,7 @@ it is a function that receives a todo item and adds to the items list.
 (AddItem "Gym at 5 AM")
 ```
 
-we call the function `addItem` with a todo item to add which is `Gym at 5 AM`
+we call the function `AddItem` with a todo item to add which is `Gym at 5 AM`
 <br/>
 and then we call the same function with different todo items to store !
 ```clarity
@@ -62,6 +91,15 @@ and then we call the same function with different todo items to store !
 
 (AddItem "Breakfast at 7 AM") 
 (AddItem "Office at 8 AM")
+```
+
+We call the function `RemoveItem` to remove the last element  in the list which in our  case is "Office at breakfast"
+
+
+```clarity
+(RemoveItem)
+
+
 ```
 ### Printing the Todo list
 We print the todo list by printing number of todo items first and then using built-in `print` function.
@@ -101,7 +139,10 @@ So this was all regrading building our project !
 Pay close attention to the left side outputs clarity tools is giving you .
 
 It is the output of each line after execution.
-![image](https://user-images.githubusercontent.com/71306738/205576563-0cfca10e-29cf-4987-b807-990f2c403f25.png)
+![part1](https://user-images.githubusercontent.com/71306738/207474239-1c1428c5-ac64-4e44-afa4-004ff321c2ac.png)
+
+
+![part2](https://user-images.githubusercontent.com/71306738/207474507-ea1364da-e20f-47dc-8d94-809c1bbdd7ed.png)
 
 ### Complete code
 
