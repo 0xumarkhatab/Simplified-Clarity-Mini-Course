@@ -180,9 +180,9 @@ It is the output of each line after execution.
 
 ![part2](https://user-images.githubusercontent.com/71306738/207474507-ea1364da-e20f-47dc-8d94-809c1bbdd7ed.png)
 
-### Complete code
+# Complete code 🥳🎉
 
 The complete code can be found [Here](./todo.clar)
 
-Head over to [Closing Note](./ClosingNote.md)
+Head over to [Closing Note](./ClosingNote.md) 💖
 
