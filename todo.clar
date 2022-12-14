@@ -5,14 +5,14 @@
 (define-public (AddItem (item (string-utf8)))
   (map-set Items (var-get Index) item) 
   (var-set Index (+ (var-get Index) u1))
-  ok "item added in todo")
+  (ok "item added in todo"))
+  
               
   
 (define-public (RemoveItem)
   (var-set Index (- (var-get Index) u1))
   (map-set Items (var-get Index) NoItem) 
-
-  ok "item is removed successfully")
+  (ok "item is removed successfully"))
 
               
   
