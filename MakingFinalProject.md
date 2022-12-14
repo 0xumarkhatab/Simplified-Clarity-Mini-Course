@@ -3,8 +3,13 @@
 
 Finally it is the time to show your super pwoers and build the final project as we go !
 
+# Project scope 
+This is project is essentially a demo project for the Proof of concept.
+And it does not use off-chain data to use in the smart contract rather it stores everything in our smart contrac.
 
-### Clarity Tools
+For building large applications , you should have a look at [IBM's Guide about OFF-Chain Storage ](https://www.ibm.com/downloads/cas/RXOVXAPM)
+
+## Clarity Tools
 Clarity tools is a playground for clarity development where you can write your code and execute on the go to see your results.
 It also has a lot of code snippers to learn from . Really Helpful. <br/>
 We will use clarity tools for our project. <br/>
@@ -12,13 +17,13 @@ We will use clarity tools for our project. <br/>
 Check clarity tools [Here](https://clarity.tools/)
 
 
-### Primary vaiables we will use
+## Primary vaiables we will use
 Index       - will be used as key in map to store and access different todo items - it's value will be increased by 1 each time a new item is added <br/>
 NoItem      - will be used to indicate the end of todo list when an item is removed
 Items       - the place where all todo items will be stored
 tempString  - to hold  intermediate data when we change an item ( more on this later )
 
-#### Vaiables declaration
+### Vaiables declaration
 ```clarity
 (define-data-var Index uint 0)
 (define-data-var NoItem (string-utf8 200) "no item")
@@ -35,11 +40,11 @@ we have defined two variables <br/>
 `Items` is a mapping with key type as `uint` and value type is `string` <br/>
 
 
-### AddItem Function
-#### Purpose
+## AddItem Function
+### Purpose
 it is a function that receives a todo item and adds to the items list.
 
-#### Technicality
+### Technicality
 
     - It receives a string type item as paramter.
     - Stores on current value of index in items list using 'map-set' function
@@ -48,15 +53,15 @@ it is a function that receives a todo item and adds to the items list.
     - Exits
 
 
-### RemoveItem Function
-#### Purpose
+## RemoveItem Function
+### Purpose
 it is a function that deletes the last element inserted in the  list of items in the todo .
 
 (with small tweaks the items can be deleted from the  front like index 0 ,1,2 .. 
 
 but  it might seem difficult at first so i stick to the easy part to keep your brain at ease )
 
-#### Technicality
+### Technicality
 
     - It has no paramter
     - Decrements the value of the  index variable
@@ -64,14 +69,14 @@ but  it might seem difficult at first so i stick to the easy part to keep your b
     - Sends back an ok message that item is Removed
     - Exits
 
-### CompleteItem Function
-#### Purpose
+## CompleteItem Function
+### Purpose
 it is a function that marks the todo item as complete by appending a string "-Completed " on it's last.
 This is just an introductory course so we are not moving to the depth  of removing items or  storing in seprate data structures.
 
 Let's go for simplicity here too : )
 
-#### Technicality
+### Technicality
 
     - It has a paramter of the position of  item ( index of item the item is stored at)
     - Fetches the item the given index
@@ -82,7 +87,7 @@ Let's go for simplicity here too : )
     - Exits
 
 
-#### code
+### code
 
 ```clarity
 (define-public (AddItem (item (string-utf8)))
@@ -103,7 +108,7 @@ Let's go for simplicity here too : )
 
 ```
 
-### Functoin invocation
+## Functoin invocation
 ```clarity
 (AddItem "Gym at 5 AM")
 ```
@@ -137,7 +142,7 @@ Similarly the `CompleteItem` function is called here as
 
 where `u1` denotes the unsigned integer `1` or  `one` in English.
 
-### Printing the Todo list
+## Printing the Todo list
 We print the todo list by printing number of todo items first and then using built-in `print` function.
 In order to access element of a map at specific key , we use `map-get?` function.
 
@@ -159,7 +164,7 @@ In order to access element of a map at specific key , we use `map-get?` function
 
 ```
 
-#### But what is try ?
+### But what is try ?
 if we just write 
 ```clarity
 (print (map-get? Items 0))
