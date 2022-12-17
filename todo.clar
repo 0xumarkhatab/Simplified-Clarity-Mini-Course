@@ -11,10 +11,10 @@
   (map-delete items itemIndex)
   (ok "You Item has been removed from todo list"))
 
-(define-public (complete-item(ItemPosition (int)))
-  (var-set temp-tuple {label:(get label (try! (map-get? items ItemPosition ) ) ),is-completed:true})
-  (map-delete items ItemPosition)
-  (map-insert items ItemPosition  (var-get temp-tuple))  
+(define-public (complete-item(item-position (int)))
+  (var-set temp-tuple {label:(get label (try! (map-get? items item-position ) ) ),is-completed:true})
+  (map-delete items item-position)
+  (map-insert items item-position  (var-get temp-tuple))  
 
   ok "You Item is marked completed")
 
