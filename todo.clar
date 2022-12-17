@@ -1,50 +1,62 @@
-(define-data-var Index int 0)
-(define-data-var NoItem (string-utf8 200) "no item")
-(define-map Items  (int) {label : string-utf8 ,is-completed:Boolean})
+(define-data-varindex int 0)
+(define-map items  (int) {label : string-utf8 ,is-completed:Boolean})
 (define-data-var temp-tuple {label : string-utf8 ,is-completed:Boolean}) {label:"",is-completed:false}
 
-(define-public (AddItem (item (string-utf8)))
+(define-public (add-item (item (string-utf8)))
   
-  (map-insert Items (var-get Index) {label:item,is-completed:false})
-  (var-set Index (+ (var-get Index) u1))
+  (map-insert items (var-get index) {label:item,is-completed:false})
+  (var-setindex (+ (var-get index) u1))
   "item has been added in todo list ")
-(define-public (RemoveItem (itemIndex (uint)))
-  (var-set Index (- (var-get Index) u1)) 
-  (map-delete Items ( map-get? Items itemIndex))
+(define-public (remove-item (itemIndex (int)))
+  (map-delete items itemIndex)
   (ok "You Item has been removed from todo list"))
 
-(define-public (CompleteItem(ItemPosition (uint)))
-  (var-set temp-tuple {label:(get label (try! (map-get? Items ItemPosition ) ) ),is-completed:true})
-  (map-delete Items ItemPosition)
-  (map-insert Items ItemPosition  (var-get temp-tuple))  
+(define-public (complete-item(ItemPosition (uint)))
+  (var-set temp-tuple {label:(get label (try! (map-get? items ItemPosition ) ) ),is-completed:true})
+  (map-delete items ItemPosition)
+  (map-insert items ItemPosition  (var-get temp-tuple))  
 
   ok "You Item is marked completed")
 
-(AddItem "Gym at 5 AM")
-(AddItem "Breakfast at 7 AM")
-(AddItem "Office at 8 AM")
-
-(CompleteItem u1)
-
-(print (map-get? Items 1))
+(define-public (print-item (item-index (int)))
+ (get label (try! (map-get? items item-index))))
+   
+ 
+  
 
 
-(print "total Items in the todo-list are ")
-(print ( var-get Index))
+(add-item "Gym at 5 AM")
+(add-item "Breakfast at 7 AM")
+(add-item "Office at 8 AM")
+
+(complete-item u1)
+
+(print (map-get? items 1))
+
+
+(print "total items in the todo-list are ")
+
+(print ( var-get index))
+
 (print "Printing Todo List ")
-(print (try! (map-get? Items 0)))
-(print (try! (map-get? Items 1)))
-(print (try! (map-get? Items 2)))
+
+(print-item 0)
+
+(print-item 1)
+
+(print-item 2)
 
 
-(print (try! (map-get? Items 1)))
 
+(remove-item 0)
 
 (print "Printing Todo List ")
 
-(print ( var-get Index))
+(print ( var-get index))
 
-(print (try! (map-get? Items 0)))
-(print (try! (map-get? Items 1)))
 
-(print (try! (map-get? Items 2)))
+
+(print-item 0)
+(print-item 1)
+(print-item 2)
+
