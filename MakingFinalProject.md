@@ -1,13 +1,13 @@
 # Final Project
 ![superman_child](https://books.forbes.com/wp-content/uploads/2020/03/bigstock-Strong-superhero-girl-with-sup-240951781.jpg)
 
-Finally it is the time to show your super pwoers and build the final project as we go !
+Finally it is the time to show your super powers and build the final project as we go !
 
 # Project scope 
-This is project is essentially a demo project for the Proof of concept.
-And it does not use off-chain data to use in the smart contract rather it stores everything in our smart contrac.
+Smart contracts are resource-constraint. Developers that just enter the blockchain space usually bring with them certain assumptions that maybe are invalid when writing smart contracts. It is important to remember that a blockchain is distributed data storage. Every state change is paid for in terms of the miner fee.
+So you should consider storing data off-chain and may use the  reference of that data to use in smart contract if smart contract does not directly use it .
 
-For building large applications , you should have a look at [IBM's Guide about OFF-Chain Storage ](https://www.ibm.com/downloads/cas/RXOVXAPM)
+For building large applications , you should have a look at t[Best practices about data storage in clarity](https://book.clarity-lang.org/ch13-02-what-to-store-on-chain.html)
 
 ## Clarity Tools
 Clarity tools is a playground for clarity development where you can write your code and execute on the go to see your results.
@@ -17,7 +17,7 @@ We will use clarity tools for our project. <br/>
 Check clarity tools [Here](https://clarity.tools/)
 
 
-## Primary vaiables we will use
+## Primary variables we will use
 Index       - will be used as key in map to store and access different todo items - it's value will be increased by 1 each time a new item is added <br/>
 NoItem      - will be used to indicate the end of todo list when an item is removed
 Items       - the place where all todo items will be stored
