@@ -170,13 +170,7 @@ A utility function to print an item in the map at a specific index
 
 ```clarity
 
-
-
-
-
-(define-public (add-item (item (string-utf8)))
-
-  
+(define-public (add-item (item (string-utf8)))  
 
   (map-insert items (var-get index) {label:item,is-completed:false})
 
@@ -209,8 +203,6 @@ A utility function to print an item in the map at a specific index
 (define-public (print-item (item-index (int)))
 
  (get label (try! (map-get? items item-index))))
-
-   
 
    
 
@@ -254,17 +246,11 @@ We call the function `remove-item` to remove the last element  in the list which
 
 
 
-
-
 ```clarity
 
 (remove-item 0)
 
-
-
 ```
-
-
 
 Similarly, the `complete-item` function is called here as 
 
@@ -272,15 +258,9 @@ Similarly, the `complete-item` function is called here as
 
 ```clarity
 
-
-
 (complete-item 1)
 
-
-
 ```
-
-
 
 
 
@@ -290,41 +270,21 @@ We print the to-do list by printing the number of to-do items first and then usi
 
 
 
-
-
 ```clarity
-
-
 
 (print "total items in the todo-list are ")(print ( var-get index))
 
-
-
 (print "Printing Todo List ")
-
-
-
-
 
 (print-item 0)
 
-
-
 (print-item 1)
-
-
 
 (print-item 2)
 
 
 
-
-
-
-
 ```
-
-
 
 ### But what is try?
 
@@ -338,7 +298,7 @@ if we just write
 
 ```
 
-clarity will still give the answer but it will be wrapped in a `some` keyword like ... `some " Gym at 5 AM" ` 
+clarity will still give the answer but it will be wrapped in a `some` keyword like ... `some "Gym at 5 AM" ` 
 
 but we want the value `Gym at 5 AM` not the "some" thing. That's where `try! the built-in function` comes in handy.
 
@@ -346,11 +306,7 @@ but we want the value `Gym at 5 AM` not the "some" thing. That's where `try! the
 
 It takes an input, unwraps the variable, and gives the value we want in this case `Gym at 5 AM`.
 
-
-
 So this was all regarding building our project!
-
-
 
 Pay close attention to the left side outputs clarity tools are giving you.
 
@@ -362,19 +318,13 @@ It is the output of each line after execution.
 
 
 
-
-
 ![part2](https://user-images.githubusercontent.com/71306738/208232758-4ba8ca47-3d44-424c-8d90-5da3c371b6b0.png)
 
 
 
 # Complete code 🎉
 
-
-
 The complete code can be found [Here](./todo.clar)
-
-
 
 Head over to [Closing Note](./ClosingNote.md) 💖
 
