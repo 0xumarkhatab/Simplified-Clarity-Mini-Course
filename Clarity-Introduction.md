@@ -16,7 +16,7 @@ Clarity uses to-the-point and clear syntax that is easy for developers to predic
 Makin it predictable ( top quality for blockchain development languages ).
 
 ### Secure
-Clarity provides you with the facility to impose conditions on contract functions ( just like the modifiers in solidity).
+Clarity provides you with the facility to impose conditions on contract functions.
 These conditions are the backbones of eliminating fradulent transactions .
 
 #### For example
