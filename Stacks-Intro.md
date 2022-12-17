@@ -7,8 +7,7 @@ Stacks is a layer-1 blockchain built by leveraging the security and power of bit
 We will not go into much details how stacks work under the hood for now but you need to know that stacks use Proof of Transfer (PoX) mechanism.
 
 # How It works ?
-It anchors the history of the bitcoin blockchain so anything present on the bitcoin chain is also present on stacks chain
-and transactions made on stacks chain are also verifiable on bitcoin chain.
+Proof-of-transfer (PoX) is an extension of the proof-of-burn mechanism. It uses the proof-of-work cryptocurrency of an established blockchain to secure a new blockchain.Proof-of-transfer blockchains are anchored on their chosen proof-of-work chain. Stacks uses Bitcoin as its anchor chain.
 
 # Course Focus
 This mini course is more about how to build on clarity and not much about the technicalities of stacks working .
