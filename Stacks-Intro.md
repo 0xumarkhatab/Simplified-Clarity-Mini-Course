@@ -4,7 +4,7 @@
 # Introduction to Stacks 
 
 Stacks is a layer-1 blockchain built by leveraging the security and power of bitcoin blockchain.
-We will not go into much details how stacks work uner the hood for now but you need to know that stacks use proof of history mechanism.
+We will not go into much details how stacks work under the hood for now but you need to know that stacks use Proof of Transfer (PoX) mechanism.
 
 # How It works ?
 It anchors the history of the bitcoin blockchain so anything present on the bitcoin chain is also present on stacks chain
