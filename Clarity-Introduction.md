@@ -28,7 +28,7 @@ Clarity eliminates the need of the compiler to publish on blockchain.
 The contracts written in solidity are directly broadcasted to the stacks blockchain.
 So you better have to write test and analyze the smart contracts before deploying on the blockchain.
 
-For that purpose , we will [Clarity Tools]() later in this course.
+For that purpose , we will use [Clarity Tools](https://clarity.tools/) later in this course.
 
 
 ### Post-conditions
@@ -38,11 +38,12 @@ It reduces bugs and it's a good way to do testing inside smart contracts  : )
 
 ### Bitcoin state
 Bitcoin always been a ledger but now stacks is leveraging the bitcoin state to its fullest.
-with clarity , it is possible to have the super powers of reading the bitcoin blockchain and build on top of it.
-We are working hard for granting you Further super powers .
+Clarity smart contracts have somehow this special visibility into the state of the Bitcoin blockchain.<br/>
+Sp ,the contract functions written in a Clarity file can be triggered when specific Bitcoin transactions are confirmed.
+We are working hard for granting you Further super powers.
 
 ## Why you Must choose Clarity
-Below here we got the [Comparison of Solidity,Move and Clarity ](https://101blockchains.com/solidity-vs-move-vs-clarity/)and deciding which is the best.
+Below here, we got the [Comparison of Solidity,Move and Clarity ](https://101blockchains.com/solidity-vs-move-vs-clarity/)and deciding which is the best.
 
 ![Solidity-Vs-Move-Vs-Clarity-Key-Differences_](https://user-images.githubusercontent.com/71306738/207467487-c0a21515-5344-460d-835e-5f9da718ba7a.jpg)
 
