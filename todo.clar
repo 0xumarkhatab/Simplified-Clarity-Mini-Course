@@ -1,17 +1,17 @@
-(define-data-varindex int 0)
-(define-map items  (int) {label : string-utf8 ,is-completed:Boolean})
+(define-data-var index (int) 0)
+(define-map items (int) {label : (string-utf8) ,is-completed:(Boolean)})
 (define-data-var temp-tuple {label : string-utf8 ,is-completed:Boolean}) {label:"",is-completed:false}
 
 (define-public (add-item (item (string-utf8)))
   
   (map-insert items (var-get index) {label:item,is-completed:false})
-  (var-setindex (+ (var-get index) u1))
+  (var-set index (+ (var-get index) 1))
   "item has been added in todo list ")
 (define-public (remove-item (itemIndex (int)))
   (map-delete items itemIndex)
   (ok "You Item has been removed from todo list"))
 
-(define-public (complete-item(ItemPosition (uint)))
+(define-public (complete-item(ItemPosition (int)))
   (var-set temp-tuple {label:(get label (try! (map-get? items ItemPosition ) ) ),is-completed:true})
   (map-delete items ItemPosition)
   (map-insert items ItemPosition  (var-get temp-tuple))  
