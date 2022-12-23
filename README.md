@@ -46,7 +46,7 @@ You will have your own `TODO App` written using Clarity at the end of this cours
 
     
 
-    ✔ What is Stacks? 🤔
+    ✔ What is Stacks Ecosystem? 🤔
 
     ✔ What is Clarity and why is it the Best Language? 💪
 
