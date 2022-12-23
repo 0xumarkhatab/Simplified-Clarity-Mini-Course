@@ -280,7 +280,7 @@ And Let's keep going!
 
 
 
-Meanwhile, give a tap on your back because you are really doing great work ✨ 
+Meanwhile, give a tap on your back because you are doing great work ✨ 
 
 
 
