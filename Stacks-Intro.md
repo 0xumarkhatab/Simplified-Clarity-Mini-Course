@@ -43,7 +43,7 @@ you can refer to [Stacks official documentation](https://www.stacks.co/learn/int
 
 
 
-Let's navigate to the next lesson which is [Introduction to Clarity](./Clarity-Introduction.MD)
+Let's navigate to the next lesson which is [Introduction to Clarity](./Clarity-Introduction.md)
 
 
 
