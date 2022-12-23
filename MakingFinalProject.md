@@ -22,7 +22,7 @@ For building large applications, you should have a look at the [Best practices a
 
 ## Clarity Tools
 
-Clarity tools is a playground for clarity development where you can write your code and execute on the go to see your results.
+It is a playground for clarity development where you can write your code and execute it on the go to see your results.
 
 It also has a lot of code snippets to learn from. Really Helpful. 
 
@@ -42,8 +42,6 @@ index       - will be used as a key in the map to store and access different tod
 
 items       - the place where all todo items will be stored
 
-temp-tuple  - to hold  intermediate data when we complete an item ( more on this later )
-
 
 
 ### Vaiables declaration
@@ -54,8 +52,6 @@ temp-tuple  - to hold  intermediate data when we complete an item ( more on this
 
 (define-map items (int) {label : (string-utf8) ,is-completed:(Boolean)})
 
-(define-data-var temp-tuple {label : string-utf8 ,is-completed:Boolean}) {label:"",is-completed: false}
-
 
 
 ```
@@ -64,15 +60,7 @@ we have defined two variables
 
 `index` has an initial value of 0 having type `signed integer`
 
-`temp-tuple` is an empty tuple having a ```clarity utf8 string ``` as `label` and a ```clarity Boolean ``` named `is-completed`
-
-which will tell us if the particular item is completed or not.
-
-
-
 `items` is a mapping with key type as `uint` and value type as `string` 
-
-
 
 
 
@@ -81,7 +69,6 @@ which will tell us if the particular item is completed or not.
 ### Purpose
 
 it is a function that receives a to-do item and adds it to the items list.
-
 
 
 ### Technicality
@@ -130,13 +117,7 @@ it is a function that deletes the item from items at the specific index
 
 it is a function that marks the to-do item as completed.
 
-
-
-
-
 Let's go for simplicity here too : )
-
-
 
 ### Technicality
 
@@ -153,9 +134,6 @@ Let's go for simplicity here too : )
     - Exits
 
 
-
-
-
 ## print-item Function
 
 ### Purpose
@@ -170,39 +148,24 @@ A utility function to print an item in the map at a specific index
 
 ```clarity
 
-(define-public (add-item (item (string-utf8)))  
-
-  (map-insert items (var-get index) {label:item,is-completed:false})
-
+(define-public (add-item (item (string-utf8)))
+  (map-insert items (var-get index) {label: item,is-completed: false})
   (var-set index (+ (var-get index) 1))
+  (ok "Item has been added"))
 
-  "item has been added to the todo list ")
-
-(define-public (remove-item (itemIndex (int)))
-
-  (map-delete items itemIndex)
-
-  (ok "You Item has been removed from todo list"))
+(define-public (remove-item (item-index (int)))
+ (map-delete items item-index)
+ (ok "Your Item has been removed from your todo list"))
 
 
 
-(define-public (complete-item(item-position (int)))
-
-  (var-set temp-tuple {label:(get label (try! (map-get? items item-position ) ) ),is-completed:true})
-
-  (map-delete items item-position)
-
-  (map-insert items item-position  (var-get temp-tuple))  
-
-
-
-  ok "You Item is marked completed")
-
+(define-public (complete-item(position(int)))      
+  (map-set items position  {label:(get label (try! (map-get? items position ) ) ),is-completed: true})  
+  (ok "your item is marked completed"))
 
 
 (define-public (print-item (item-index (int)))
-
- (get label (try! (map-get? items item-index))))
+  (get label (try! (map-get? items item-index))))
 
    
 
@@ -314,12 +277,10 @@ Pay close attention to the left side outputs clarity tools are giving you.
 
 It is the output of each line after execution.
 
-![part1](https://user-images.githubusercontent.com/71306738/208232713-8f078f59-21d5-424e-b027-4c6c4d78e774.png)
+![part1](https://user-images.githubusercontent.com/71306738/209278178-3a805de9-30d2-42cf-9f9c-570bf40eec60.png)
 
 
-
-![part2](https://user-images.githubusercontent.com/71306738/208232758-4ba8ca47-3d44-424c-8d90-5da3c371b6b0.png)
-
+![part2](https://user-images.githubusercontent.com/71306738/209278264-7c072c47-2834-4b81-926d-e1452a5792c3.png)
 
 
 # Complete code 🎉
