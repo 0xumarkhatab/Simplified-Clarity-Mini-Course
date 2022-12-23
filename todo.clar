@@ -2,7 +2,7 @@
 
 (define-map items (int) {label : (string-utf8) ,is-completed:(Boolean)})
 (define-data-var index (int) 0)
-(define-data-var temp-tuple {label : string-utf8 ,is-completed:Boolean}) {label:"",is-completed:false}
+(define-data-var temp-tuple {label : (string-utf8) ,is-completed:Boolean}) {label:"",is-completed:false}
 (define-public (add-item (item (string-utf8)))
   (map-insert items (var-get index) {label: item,is-completed: false})
   (var-set index (+ (var-get index) 1))
@@ -13,12 +13,10 @@
  (ok "Your Item has been removed from your todo list"))
   
 
-(define-public (complete-item(position(int)))
-                 
-  (var-set temp-tuple {label:(get label (try! (map-get? items position ) ) ),is-completed: true})
-  (map-delete items position)
-  (map-insert items position   (var-get temp-tuple))  
+(define-public (complete-item(position(int)))      
+  (map-set items position  {label:(get label (try! (map-get? items position ) ) ),is-completed: true})  
   (ok "your item is marked completed"))
+
 (define-public (print-item (item-index (int)))
   (get label (try! (map-get? items item-index))))
    
@@ -45,5 +43,5 @@
 (print ( var-get index))
 (print-item 0)
 (print-item 1)
-(print-item 2); no item present means it is deleted .
+(print-item 2); no items present means it is deleted .
 
