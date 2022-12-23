@@ -7,7 +7,7 @@
 
 
 
-Stacks is a layer-1 blockchain built by leveraging the security and power of the bitcoin blockchain.
+The Stacks Ecosystem is a layer-1 blockchain built by leveraging the security and power of the bitcoin blockchain.
 
 We will not go into many details about how stacks work under the hood for now but you need to know that stacks use the Proof of Transfer (PoX) mechanism.
 
@@ -43,7 +43,7 @@ you can refer to [Stacks official documentation](https://www.stacks.co/learn/int
 
 
 
-Let's navigate to the next lesson which is [Introduction to Clarity](./Clarity-Introduction.md)
+Let's navigate to the next lesson which is [Introduction to Clarity](./Clarity-Introduction.MD)
 
 
 
