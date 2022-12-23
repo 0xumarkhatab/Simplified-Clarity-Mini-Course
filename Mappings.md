@@ -62,7 +62,7 @@ value at key `2` in `Items` is  `Breakfast at 6 am`
 
 value at key `3` in `Items` is  `office at 9 am` 
 
-and so on..
+and so on.
 
 
 
@@ -104,7 +104,7 @@ Following is a valid map declaration
 
 
 
-We are telling clarity to create a map by the `define-map` keyword,  giving it a name of `Items`, key data type to be `uint` (unsigned integer) and value data type is the string (`string-utf-8`)
+We are telling clarity to create a map by the `define-map` keyword,  giving it the name of `Items`, the key data type to be `uint` (unsigned integer) and the value data type is the string (`string-utf-8`)
 
 
 
